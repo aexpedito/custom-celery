@@ -11,7 +11,7 @@ services:
     ports:
       - "2181:2181"
     environment:
-      BROKER_URL: amqp://admin:mypass@celery-broker:5672//
+      BROKER_URL: amqp://admin:${RABBITMQ_PASSWORD}@celery-broker:5672//
     networks:
       - celery-net
     command: ["celery", "-A", "tasks", "worker", "-l", "INFO"]
@@ -24,7 +24,7 @@ services:
       - "5672:5672"
     environment:
       RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: mypass
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
     networks:
       - celery-net
 

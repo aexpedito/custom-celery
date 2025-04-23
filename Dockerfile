@@ -21,11 +21,11 @@ RUN python -m pip install poetry==$POETRY_VERSION && \
     poetry config virtualenvs.create false && \
     poetry install --no-root --no-directory --no-cache
 
-# Copy our code from the current folder to the working directory inside the container
+# Copy tasks folder from ./src/tasks to /app
 COPY ./src .
 
 # Make port 8080 available for metrics
 EXPOSE 8000
 
 # Define our command to be run when launching the container
-CMD ["celery", "-A", "src.tasks", "worker", "-l", "INFO"]
+CMD ["celery", "-A", "tasks", "worker", "-l", "INFO"]
