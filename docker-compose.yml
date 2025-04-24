@@ -3,7 +3,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: custom_celery
+    image: custom_celery:latest
     container_name: "custom_celery"
     restart: unless-stopped
     ports:
