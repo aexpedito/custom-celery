@@ -1,0 +1,4 @@
+# pre requisites
+ python3.11 -m venv .venv
+ source .venv/bin/activate
+python3.11 -m pip install poetry==2.1.2

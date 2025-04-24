@@ -1,5 +1,5 @@
 # Define a base stage that uses the official python runtime base image
-FROM python:3.12.10-slim-bullseye AS base
+FROM python:3.11.12-slim-bullseye AS base
 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
